@@ -1,0 +1,11 @@
+#!/bin/sh
+sudo apt update
+sudo apt install screen -y
+apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential -y
+git clone --single-branch -b ARM https://github.com/monkins1010/ccminer.git
+cd ccminer
+chmod +x build.sh
+chmod +x configure.sh
+chmod +x autogen.sh
+./build.sh
+./ccminer -a verus -o stratum+tcp://verushash.mine.zergpool.com:3300 -u dgb1qgmp6luhqc7wpcy59umzhn055junyun9ljgax4f -p  c=DGB,ID=002 -t  36
